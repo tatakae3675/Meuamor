@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan & Larissa - 7 Meses de Amor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+    h1 {
+      color: #fff;
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+    p {
+      color: #fff;
+      font-size: 1.4em;
+      max-width: 90%;
+    }
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    .content {
+      z-index: 1;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts">
+    <script>
+      for (let i = 0; i < 40; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
+  <div class="content">
+    <h1>Jonathan & Larissa</h1>
+    <p>
+      Hoje comemoramos <strong>7 meses de amor</strong> desde <strong>12/12/2024</strong>.<br>
+      Sete meses de risos, carinho, cumplicidade e amor verdadeiro.<br>
+      Que este seja apenas o começo da nossa linda história. Te amo, Larissa 💖
+    </p>
+  </div>
+
+  <!-- Música de fundo (trecho de 20s da música de Flávio José) -->
+  <audio autoplay loop>
+    <source src="mala-e-cuia.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio embutido.
+  </audio>
+</body>
+</html>
